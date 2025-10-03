@@ -29,7 +29,6 @@ public class FrmEliminarPelicula extends JFrame {
         btnLimpiar.setBounds(180, 100, 100, 30);
         add(btnLimpiar);
 
-        // Acción eliminar
         btnEliminar.addActionListener(e -> {
             try (Connection con = Conexion.getConexion()) {
                 int id = Integer.parseInt(txtId.getText());
@@ -55,7 +54,6 @@ public class FrmEliminarPelicula extends JFrame {
             }
         });
 
-        // Acción limpiar
         btnLimpiar.addActionListener(e -> txtId.setText(""));
     }
 }

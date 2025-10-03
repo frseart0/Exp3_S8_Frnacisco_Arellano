@@ -95,7 +95,6 @@ public class FrmModificarPelicula extends JFrame {
             }
         });
 
-        // Acción modificar
         btnModificar.addActionListener(e -> {
             try (Connection con = Conexion.getConexion()) {
                 String sql = "UPDATE Cartelera SET titulo=?, director=?, anio=?, duracion=?, genero=? WHERE id=?";
@@ -117,7 +116,7 @@ public class FrmModificarPelicula extends JFrame {
             }
         });
 
-        // Acción limpiar
+
         btnLimpiar.addActionListener(e -> {
             txtId.setText("");
             txtTitulo.setText("");

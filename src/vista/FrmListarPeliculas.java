@@ -48,16 +48,14 @@ public class FrmListarPeliculas extends JFrame {
         btnMostrarTodo.setBounds(570, 20, 120, 25);
         add(btnMostrarTodo);
 
-        // Tabla
+
         tabla = new JTable();
         JScrollPane scroll = new JScrollPane(tabla);
         scroll.setBounds(20, 70, 650, 250);
         add(scroll);
 
-        // Cargar datos iniciales
         cargarDatos(null, null, null);
 
-        // Acción filtrar
         btnFiltrar.addActionListener(e -> {
             String genero = cmbGenero.getSelectedItem().toString();
             Integer inicio = txtAnioInicio.getText().isEmpty() ? null : Integer.parseInt(txtAnioInicio.getText());
@@ -65,7 +63,6 @@ public class FrmListarPeliculas extends JFrame {
             cargarDatos(genero.equals("Todos") ? null : genero, inicio, fin);
         });
 
-        // Acción mostrar todo
         btnMostrarTodo.addActionListener(e -> {
             txtAnioInicio.setText("");
             txtAnioFin.setText("");

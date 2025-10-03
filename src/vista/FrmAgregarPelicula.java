@@ -63,7 +63,6 @@ public class FrmAgregarPelicula extends javax.swing.JFrame {
         cmbGenero.setBounds(150, 190, 200, 25);
         add(cmbGenero);
 
-        // Botones
         javax.swing.JButton btnGuardar = new javax.swing.JButton("Guardar");
         btnGuardar.setBounds(50, 250, 100, 30);
         add(btnGuardar);
@@ -72,7 +71,6 @@ public class FrmAgregarPelicula extends javax.swing.JFrame {
         btnLimpiar.setBounds(200, 250, 100, 30);
         add(btnLimpiar);
 
-        // Acción Guardar
         btnGuardar.addActionListener(evt -> {
             try {
                 String titulo = txtTitulo.getText();
@@ -121,7 +119,6 @@ public class FrmAgregarPelicula extends javax.swing.JFrame {
             }
         });
 
-        // Acción Limpiar
         btnLimpiar.addActionListener(evt -> {
             txtTitulo.setText("");
             txtDirector.setText("");

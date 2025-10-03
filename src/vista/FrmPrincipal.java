@@ -18,10 +18,8 @@ public class FrmPrincipal extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Crear contenedor con pestañas
         JTabbedPane tabs = new JTabbedPane();
 
-        // Pestaña Listar
         JPanel pnlListar = new JPanel(null);
         tabla = new JTable();
         JScrollPane scroll = new JScrollPane(tabla);
@@ -124,7 +122,6 @@ public class FrmPrincipal extends JFrame {
         cargarDatos();
     }
 
-    // Método para listar en tabla
     private void cargarDatos() {
         DefaultTableModel modelo = new DefaultTableModel(
                 new String[]{"ID","Título","Director","Año","Duración","Género"}, 0);
@@ -147,7 +144,6 @@ public class FrmPrincipal extends JFrame {
         }
     }
 
-    // Guardar película
     private void guardarPelicula() {
         try (Connection con = Conexion.getConexion()) {
             String sql = "INSERT INTO Cartelera (titulo,director,anio,duracion,genero) VALUES (?,?,?,?,?)";
@@ -174,7 +170,6 @@ public class FrmPrincipal extends JFrame {
         cmbGenero.setSelectedIndex(0);
     }
 
-    // Eliminar película
     private void eliminarPelicula() {
         try (Connection con = Conexion.getConexion()) {
             int id = Integer.parseInt(txtIdEliminar.getText());
